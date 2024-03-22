@@ -3,9 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>mbti설문조사 페이지</title>
+    <style>
+      label {
+        text-transform: uppercase;
+      }
+    </style>
   </head>
   <body>
-    아직 빈곳
+    <header>
+      <h1>mbti 설문조사</h1>
+      <p>본인의 mbti를 선택해주세요.</p>
+    </header>
+
+    <hr />
+
+    <main>
+      <form>
+        <fieldset>
+          <legend>개인정보</legend>
+
+          <label for="name">이름</label>
+          <input
+            type="text"
+            placeholder="이름을 입력하세요"
+            id="name"
+            name="name"
+          />
+
+          <br />
+          <br />
+
+          <label for="man">남</label>
+          <input type="radio" id="man" name="gender" />
+          <label for="woman">여</label>
+          <input type="radio" id="woman" name="gender" />
+
+          <br />
+          <br />
+
+          <label for="age">나이</label>
+          <select name="age" id="age">
+            <option value="age10">10대</option>
+            <option value="age20">20대</option>
+            <option value="age30">30대</option>
+            <option value="age40">40대</option>
+            <option value="older">그 외</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>필수</legend>
+          <p>본인의 mbti를 선택하세요.</p>
+
+          <input type="radio" name="mbti" id="istp" />
+          <label for="istp">istp</label>
+
+          <input type="radio" name="mbti" id="istj" />
+          <label for="istj">istj</label>
+
+          <input type="radio" name="mbti" id="isfp" />
+          <label for="isfp">isfp</label>
+
+          <input type="radio" name="mbti" id="isfj" />
+          <label for="isfj">isfj</label>
+
+          <input type="radio" name="mbti" id="infp" />
+          <label for="infp">infp</label>
+
+          <input type="radio" name="mbti" id="intp" />
+          <label for="intp">intp</label>
+
+          <input type="radio" name="mbti" id="infj" />
+          <label for="infj">infj</label>
+
+          <input type="radio" name="mbti" id="intj" />
+          <label for="intj">intj</label>
+
+          <br />
+
+          <input type="radio" name="mbti" id="istp" />
+          <label for="istp">estp</label>
+
+          <input type="radio" name="mbti" id="istj" />
+          <label for="istj">estj</label>
+
+          <input type="radio" name="mbti" id="isfp" />
+          <label for="isfp">esfp</label>
+
+          <input type="radio" name="mbti" id="isfj" />
+          <label for="isfj">esfj</label>
+
+          <input type="radio" name="mbti" id="infp" />
+          <label for="infp">enfp</label>
+
+          <input type="radio" name="mbti" id="intp" />
+          <label for="intp">entp</label>
+
+          <input type="radio" name="mbti" id="infj" />
+          <label for="infj">enfj</label>
+
+          <input type="radio" name="mbti" id="intj" />
+          <label for="intj">entj</label>
+
+          <br />
+
+          <p>본인이 좋아하는 유형 또는 되고싶은 유형과 그 이유를 적어주세요.</p>
+          <textarea
+            cols="30"
+            rows="5"
+            placeholder="예시: ENFP가 좋습니다. 활발하고 밝은..."
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <legend>이벤트</legend>
+          <p>번호를 입력해주시면 이벤트에 자동으로 응모가 됩니다.</p>
+          <label for="number">전화번호</label>
+          <input
+            type="tel"
+            id="number"
+            name="number"
+            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+            placeholder="010-1234-5678"
+          />
+        </fieldset>
+        <br />
+        <input type="submit" value="확인" />
+      </form>
+    </main>
+
+    <hr />
+
+    <footer>
+      <p>설문에 응해주셔서 감사합니다.</p>
+      <p>&copy 김준현</p>
+    </footer>
   </body>
 </html>
