@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 폼 만들기</title>
+  </head>
+  <body>
+    <header>
+      <h1>회원가입</h1>
+    </header>
+    <main>
+      <form method="" action="">
+        <fieldset>
+          <legend>정보</legend>
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" placeholder="홍길동" />
+
+          <br />
+          <br />
+
+          <label for="email">이메일</label>
+          <input type="text" id="email" name="email" placeholder="hgd123" />@
+          <select name="email2" id="email2">
+            <option value="" selected disabled>선택</option>
+            <option value="naver">naver.com</option>
+            <option value="daum">daum.net</option>
+            <option value="gmail">gmail.com</option>
+          </select>
+
+          <br />
+          <br />
+
+          <label for="pw">비밀번호</label>
+          <input type="password" id="pw" name="password" />
+
+          <br />
+
+          <label for="pw">비밀번호 확인</label>
+          <input type="password" id="pw" name="passwordCheck" />
+        </fieldset>
+
+        <br />
+
+        <fieldset>
+          <legend>추가정보</legend>
+          <input type="radio" id="korean" name="states" checked />
+          <label for="korean">내국인</label>
+
+          <input type="radio" id="foreigner" name="states" />
+          <label for="foreigner">외국인</label>
+
+          <br />
+          <br />
+
+          <label for="address">주소</label>
+          <textarea
+            name="address"
+            id="address"
+            cols="40"
+            rows="1"
+            placeholder="주소를 입력해 주세요..."
+            style="resize: none"
+          ></textarea>
+
+          <br />
+          <br />
+
+          <label for="phone">전화번호</label>
+          <textarea
+            name=""
+            id=""
+            cols="2"
+            rows="1"
+            style="resize: none"
+          ></textarea>
+          <textarea
+            name=""
+            id=""
+            cols="3"
+            rows="1"
+            style="resize: none"
+          ></textarea>
+          <textarea
+            name=""
+            id=""
+            cols="3"
+            rows="1"
+            style="resize: none"
+          ></textarea>
+          <button>인증번호 받기</button>
+
+          <br />
+          <br />
+
+          <label for="age">연령대</label>
+          <select name="age" id="age">
+            <option value="age10">10대</option>
+            <option value="age10">20대</option>
+            <option value="age10">30대</option>
+            <option value="age10">그 외</option>
+          </select>
+        </fieldset>
+        <br />
+        <input type="submit" value="회원가입" />
+      </form>
+    </main>
+    <footer></footer>
+  </body>
+</html>
