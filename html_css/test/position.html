@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 10px;
+        height: 2000px;
+      }
+
+      div {
+        margin: 20px auto;
+      }
+
+      .first {
+        border: 1px solid red;
+        width: 100%;
+        height: 900px;
+      }
+
+      .second {
+        border: 1px solid orange;
+        width: 90%;
+        height: 90%;
+        float: left;
+      }
+      .third {
+        border: 1px solid blue;
+        width: 90%;
+        height: 90%;
+      }
+      .fourth {
+        border: 1px solid black;
+        width: 90%;
+        height: 90%;
+      }
+
+      .static {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border: 1px seagreen solid;
+      }
+
+      .relative {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid rgb(28, 124, 153);
+        position: relative;
+        bottom: 30px;
+      }
+
+      .absolute {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid rgb(120, 51, 110);
+        position: absolute;
+        top: 5px;
+        right: 100px;
+      }
+
+      .fixed {
+        border: 1px solid pink;
+        clear: right;
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: 10px;
+        left: 20px;
+      }
+
+      .fixed2 {
+        border: 1px solid rgb(255, 19, 58);
+        clear: right;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first">
+      <div class="second">
+        <div class="third">
+          <div class="fourth">
+            <span class="static">이건 static</span>
+            <span class="relative">이건 relative</span>
+            <p class="fixed">이건 fixed</p>
+            <span class="absolute">이건 absolute</span>
+            <span class="static">이건 static2</span>
+            <p class="fixed2">이건 fixed2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
