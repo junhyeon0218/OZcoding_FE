@@ -1,0 +1,131 @@
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px 1px 10px 1px rgba(128, 128, 128, 0.248);
+  align-items: center;
+}
+
+.header-contents {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header-title {
+  margin: 0;
+  letter-spacing: 5px;
+  color: #8b4513;
+  margin-left: 10px;
+}
+
+.header-nav-list {
+  display: flex;
+  align-items: center;
+
+  list-style-type: none;
+  margin: 0 0 0 30px;
+  padding: 0;
+}
+
+.header-nav-list li {
+  margin: 0;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header-nav-list li:nth-child(3) {
+  color: white;
+  font-size: 18px;
+  background-color: #8b4513;
+  border-radius: 5px;
+}
+
+.header-nav-list li:nth-child(3):hover {
+  transform: scale(1.03);
+  transition: all 0.2s;
+}
+
+.header-input {
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.header-input input:nth-child(2n-1) {
+  display: none;
+}
+
+.header-input input[type="text"] {
+  width: 200px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #8b4513;
+  background: none;
+  transform-origin: right;
+  margin-right: 10px;
+}
+
+.header-input input[type="text"]:hover {
+  transform: scaleX(1.3);
+  transition: all 0.3s;
+}
+
+.header-input input[type="text"]:not(:hover) {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-input input[type="text"]:focus {
+  background-color: #8b451310;
+  transform-origin: right;
+  transform: scaleX(1.3);
+}
+
+.header-input input:nth-child(4) {
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid #8b4513;
+  padding: 3px 12px;
+  background: none;
+}
+
+.header-input input:nth-child(4):hover {
+  transform: scale(1.03);
+  transition: all 0.2s;
+}
+
+@media screen and (max-width: 1024px) {
+  .header-input input:nth-child(2n) {
+    display: none;
+  }
+
+  .header-input input:nth-child(2n-1) {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid #8b4513;
+  }
+
+  .header-input input:nth-child(2n-1):hover {
+    transform: scale(1.02);
+    transition: all 0.3s;
+  }
+
+  .header-input input:nth-child(1) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-nav-list {
+    display: none;
+  }
+}
