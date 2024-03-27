@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9c6644;
+}
+
+body {
+  margin: 0;
+  width: 1100px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ede0d4;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px black;
+}
+
+.springBox {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.curve {
+  height: 30px;
+  overflow: hidden;
+  width: 50px;
+  position: relative;
+  right: 25px;
+}
+
+.concave {
+  border-radius: 50%;
+  box-shadow: 0px -17px #b08968, 1px -11px 10px black;
+  height: 100px;
+  position: relative;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+}
+
+.spring::after {
+  display: block;
+  content: "";
+  width: 50px;
+  height: 20px;
+  background-color: aqua;
+  position: relative;
+  top: 14px;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+
+header {
+  background-color: #e6ccb2;
+  width: 300px;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.emoji {
+  font-size: 36px;
+  text-shadow: 1px 1px 5px black;
+}
+
+.title {
+  margin: 0;
+  color: #7f5539;
+}
+
+.name {
+  margin-top: 60px;
+  color: #9c6644;
+}
+
+main {
+  width: 550px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: start;
+}
+
+.profile {
+  margin: 0 0 30px 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.list li {
+  margin-bottom: 25px;
+}
+
+footer {
+  width: 250px;
+  border-left: #9c6644 1px solid;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.link {
+  justify-content: space-around;
+  height: 100%;
+}
+
+a {
+  color: #7f5539;
+  text-decoration: none;
+}
+
+.copy {
+  color: #b08968;
+  font-size: 14px;
+}
