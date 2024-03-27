@@ -1,0 +1,257 @@
+/* 메인 콘텐츠 */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fillBorder {
+  0% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #ffffff;
+  }
+}
+
+/* 섹션 1 요일 웹툰 */
+
+.section1 {
+  width: 1190px;
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 410px;
+}
+
+.sec1-Box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sec1-title {
+  font-size: 20px;
+}
+
+.sec1-whole {
+  margin-left: auto;
+  font-size: 15px;
+  text-decoration: none;
+  color: #666;
+  margin-top: 5px;
+}
+
+.sec1-seeLot {
+  margin: 0 0 0 17px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.sec1-seeLot li {
+  margin-left: 5px;
+  color: #666;
+  cursor: pointer;
+}
+
+.sec1-seeLot li:nth-child(1) {
+  color: #00dc64;
+}
+
+.sec1-wtList {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sec1-wtList-card {
+  width: 230px;
+  height: 355px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec1-detail {
+  height: 55px;
+  padding-top: 12px;
+}
+
+.sec1-detail h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  height: 21px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sec1-detail p {
+  margin: 2px 0 0 0;
+  padding: 0;
+  font-size: 14px;
+  height: 20px;
+}
+
+.sec1-imgBox {
+  width: 230px;
+  height: 300px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sec1-img {
+  width: 230px;
+  height: 300px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.sec1-img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.sec1-img:not(:hover) {
+  transform: scale(1);
+  transition: all 0.3s;
+}
+
+.sec1-new {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00dc64;
+  z-index: 2;
+  position: absolute;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transform: translate(5px, 5px);
+}
+
+.sec1-today {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 105px;
+  height: 34px;
+  transform: translate(125px, -39px);
+  overflow: visible;
+  border-bottom-right-radius: 4px;
+  background: #ff4747;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.sec1-today2 {
+  transform: translate(-115%, 275px);
+  position: absolute;
+  z-index: 5;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  text-shadow: 1px 1px 3px #ff4747;
+}
+
+.sec1-detail span {
+  font-size: 10px;
+  border: 1px solid #ff4747;
+  color: #ff4747;
+  display: inline-block;
+  border-radius: 2px;
+  height: 13px;
+  width: 17px;
+  display: flex;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.slide {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: 1px 3px 5px #0000001a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(1170px, 128px);
+  cursor: pointer;
+}
+
+/* 섹션 1 밑 광고 */
+
+.sec1-ad {
+  width: 1190px;
+  margin: 30px auto 0;
+  background-image: url(../../public/sec1-add.png);
+  height: 100px;
+  border-radius: 4px;
+  border: 1px solid #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 100px;
+  position: relative; /* added position relative for absolute positioning */
+}
+
+.sec1-ad-detail {
+  margin: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative; /* added position relative for absolute positioning */
+}
+
+.sec1-ad-detail:hover::after {
+  content: "";
+  position: absolute;
+  width: 97%;
+  height: 97%;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  animation: fillBorder 1s ease forwards;
+  animation-delay: 0.5s; /* Add a delay to start the animation after the border appears */
+}
+
+.sec1-ad-up {
+  font-size: 24px;
+  display: inline-block;
+  animation: bounce 1.5s ease-in-out infinite alternate;
+}
+
+.sec1-ad-more {
+  transform: translateY(5px);
+  position: absolute;
+  transition: transform 0.5s ease;
+}
+
+.sec1-ad-detail:hover .sec1-ad-up {
+  opacity: 0;
+}
+
+.sec1-ad-detail:hover .sec1-ad-more {
+  transform: translateY(-1px);
+}

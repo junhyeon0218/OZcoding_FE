@@ -1,0 +1,196 @@
+/* 컬러 팔레트 */
+/* 
+    -color-webtoon-green: #00dc64; 홈 등 밝은 초록
+    --color-webtoon-dim-green: #00c855;
+    --color-text-primary: #000;
+    --color-text-addition: #666;
+    --color-text-read: #b2b2b2;
+    --color-text-describe: #999;
+    --color-text-subtitle: #555;
+    --color-text-minor: #7f7f7f;
+    --color-text-secondary: #444;
+    --color-text-white: #fff;
+    --color-text-title: #fff;
+    --color-text-highlight: #ff4747;
+    --color-text-dislike: #286af6;
+    --color-text-etc: #c4c4c4;
+    --color-bg-primary: #fff;
+    --color-bg-secondary: #f6f6f6;
+    --color-bg-weekday: #ccf8e0;
+    --color-bg-dim-banner: rgba(0, 0, 0, 0.4);
+    --color-bg-dim-thumbnail: rgba(0, 0, 0, 0.6);
+    --color-bg-item: #f1f2f3;
+    --color-bg-etc: #ededed;
+    --color-bg-tag: #ebebeb;
+    --color-bg-button-negative: #e0e0e0;
+    --color-line-primary: #e0e0e0; 서치박스 라인
+    --color-line-secondary: #ebebeb; 상단 헤더 라인
+    --color-line-list-thumbnail: rgba(0, 0, 0, 0.06);
+    --color-line-minor: #d3d3d3;
+    --color-line-rank-thumbnail: rgba(0, 0, 0, 0.1);
+    --color-line-button-02: #fff;
+    --color-line-popup: #c4c4c4;
+    --color-solid-highlight: rgba(0, 220, 100, 0.2);
+    --color-solid-badge: #ff4747;
+    --color-solid-popup-dim: rgba(0, 0, 0, 0.7);
+    --color-solid-promotion-bar: #e5fbef;
+    --color-solid-board: #fffdf1;
+    --color-solid-board-select: #f3f5f8;
+    --color-solid-placeholder: rgba(178, 178, 178, 0.15);
+    --color-grey600: #999;
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 120px;
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+}
+
+input[type="button"] {
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+}
+
+/* 헤더 1 */
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.header1 {
+  height: 65px;
+  width: 1190px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  width: 240px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.logo2 {
+  font-size: 18px;
+  color: rgb(200, 200, 200);
+  font-weight: lighter;
+}
+
+.inputBox {
+  width: 368px;
+  display: flex;
+  align-items: center;
+}
+
+.searchBox {
+  width: 270px;
+  height: 35px;
+  border: 1px solid #e0e0e0;
+  margin-right: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.search {
+  border: none;
+  width: calc(100% - 75px);
+}
+
+.emoji {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.login {
+  width: 45px;
+  height: 20px;
+  font-size: 12px;
+  padding: 2px 1px 0 0;
+  border: 1px solid #e4e4e4;
+  background: none;
+  color: #666;
+  margin-right: 7px;
+}
+
+.menu {
+  width: 34px;
+  height: 28px;
+  border: none;
+  background: none;
+  font-size: 26px;
+  transform: translateY(-5px);
+}
+
+/* 헤더 2 */
+
+.header2 {
+  height: 55px;
+  width: 1190px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+}
+
+.navList li {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 18px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.navList li:nth-child(1) {
+  background-color: #00dc64;
+  color: white;
+}
+
+.creator {
+  width: 150px;
+  height: 40px;
+  background: #00dc64;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 15px;
+}
