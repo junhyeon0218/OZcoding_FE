@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 45px;
-  height: 2227px;
+  height: auto;
 }
 
 .sec2-box {
@@ -96,7 +96,7 @@
   transition: all 0.3s;
 }
 
-.hot-wt li p span {
+.up {
   font-size: 10px;
   border: 1px solid #ff4747;
   color: #ff4747;
@@ -260,4 +260,195 @@
   border-radius: 4px;
   height: 30px;
   font-size: 14px;
+}
+
+/* 베스트 도전, 새로운 베스트 도전 */
+
+.new-chal-new-best {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-chal {
+  width: 202px;
+  height: 337px;
+}
+
+.new-chal h3 {
+  margin: 0 0 5px;
+  display: flex;
+  padding-top: 15px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.new-chal-card {
+  display: flex;
+  flex-direction: column;
+  height: 282;
+}
+
+.new-chal-imgBox {
+  overflow: hidden;
+  border-radius: 4px;
+  width: 202px;
+  height: 164px;
+}
+
+.new-chal-img {
+  border-radius: 4px;
+  width: 202px;
+  height: 164px;
+}
+
+.new-chal-img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.new-chal-img:not(:hover) {
+  transform: scale(1);
+  transition: all 0.3s;
+}
+
+.new-chal-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 14px;
+  height: 118px;
+}
+
+.new-chal-detail h4 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.new-chal-detail span {
+  font-size: 14px;
+  padding: 3px 0;
+}
+
+.new-chal-detail p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.bookmark {
+  font-size: 10px;
+  background: #00dc64;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 33px;
+  position: absolute;
+  z-index: 3;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  transform: translateX(5px);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.chal {
+  width: 577px;
+}
+
+.chal-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0 0 0;
+  margin-bottom: 5px;
+  height: 50px;
+}
+
+.chal-title h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.chal-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 577px;
+  height: 281px;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.chal-list li {
+  width: 250px;
+  height: 87px;
+  display: flex;
+}
+
+.chal-imgBox {
+  width: 107px;
+  height: 87px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.chal-img {
+  width: 107px;
+  height: 87px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.chal-img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.chal-img:not(:hover) {
+  transform: scale(1);
+  transition: all 0.3s;
+}
+
+.bookmark2 {
+  position: absolute;
+  font-size: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 20px;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+.chal-detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  justify-content: space-evenly;
+}
+
+.chal-detail h4 {
+  margin: 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.chal-detail h5 {
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.chal-detail p {
+  margin: 0;
+  font-size: 13px;
+  color: #999999;
 }

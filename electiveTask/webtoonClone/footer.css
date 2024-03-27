@@ -1,0 +1,31 @@
+footer {
+  width: 100%;
+  margin-top: 45px;
+  padding-top: 45px;
+  border: 1px solid #ebebeb;
+}
+
+.footerBox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1190px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer1,
+.footer2 {
+  width: 50%;
+  height: 30px;
+}
+
+.footer3 {
+  width: 100%;
+  height: 40px;
+}
+
+.footer4 {
+  width: 100%;
+  margin-bottom: 45px;
+}

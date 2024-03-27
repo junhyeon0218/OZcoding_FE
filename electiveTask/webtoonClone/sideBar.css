@@ -2,3 +2,85 @@
   margin-top: 81px;
   width: 300px;
 }
+
+.side-imgBox {
+  border-radius: 4px;
+}
+
+.side-img {
+  border-radius: 4px;
+}
+
+.side-img::after {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  content: "";
+  border-radius: inherit;
+}
+
+.side-wt {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+}
+
+.side-wt-title {
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.side-wt-title-cate {
+  font-size: 15px;
+}
+
+.side-wt-title-h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.side-choice {
+  color: #00dc64;
+}
+
+.side-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.side-list li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.side-list-wt {
+  margin-left: 40px;
+}
+
+.notice {
+  margin-top: 45px;
+}
+
+.notice-title {
+  font-size: 20px;
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.notice-list {
+  margin: 30px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.notice-list li {
+  margin: 15px 0;
+}
