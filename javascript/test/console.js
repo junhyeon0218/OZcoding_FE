@@ -9,5 +9,5 @@
 // b = 3;
 // console.log(b);
 
-c = "1" + 2;
-console.log(typeof c);
+// c = "1" + 2;
+// console.log(typeof c);
