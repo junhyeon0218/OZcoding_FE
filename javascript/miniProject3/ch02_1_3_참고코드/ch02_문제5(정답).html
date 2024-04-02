@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let distance = prompt("이동 거리(km)를 입력하세요:");
+        distance = parseFloat(distance);
+
+        if (distance < 0.5) {
+            console.log("걷기를 추천합니다.");
+        } else if (distance < 2) {
+            console.log("자전거를 추천합니다.");
+        } else if (distance < 10) {
+            console.log("버스를 추천합니다.");
+        } else {
+            console.log("지하철을 추천합니다.");
+        }
+    </script>
+</body>
+</html>
