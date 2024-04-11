@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+#stop {
+  border: none;
+  font-size: 25px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgb(231, 29, 29);
+  color: white;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#now_time {
+  font-size: 30px;
+}
+
+#sharp {
+  font-size: 20px;
+}
