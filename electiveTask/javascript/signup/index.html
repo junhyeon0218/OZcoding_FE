@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>회원가입 폼</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=" />
+  </head>
+  <body>
+    <!-- 여기에 HTML문서를 작성하세요. -->
+    <h1>회원가입</h1>
+    <form action="">
+      <div class="inputBox nameBox">
+        <label for="name">이름<span class="essential"> *</span></label>
+        <input
+          type="text"
+          placeholder="이름을 입력하세요."
+          name="userName"
+          id="name"
+          class="input"
+          required
+        />
+      </div>
+
+      <div class="inputBox numBox">
+        <label for="num">주민등록번호<span class="essential"> *</span></label>
+        <div class="numContain">
+          <input
+            type="text"
+            placeholder="주민등록번호 6자리"
+            name="userNum"
+            id="num"
+            class="input"
+            required
+          />
+          -
+          <label for="num2"></label>
+          <input
+            type="password"
+            id="num2"
+            placeholder="·"
+            name="userNum2"
+            itemid="num2"
+            required
+          />
+          <span>······</span>
+        </div>
+      </div>
+
+      <div class="inputBox idBox">
+        <label for="id">아이디<span class="essential"> *</span></label>
+        <input
+          type="text"
+          placeholder="영문 및 숫자 4~12글자로 입력하세요."
+          name="userId"
+          id="id"
+          class="input"
+          required
+        />
+      </div>
+
+      <div class="inputBox pwdBox">
+        <label for="pwd">비밀번호<span class="essential"> *</span></label>
+        <input
+          type="password"
+          placeholder="영문 및 숫자로 8글자 이상 입력하세요."
+          name="userPassword"
+          id="pwd"
+          class="input"
+          required
+        />
+      </div>
+
+      <div class="inputBox pwdBox">
+        <label for="pwd2">비밀번호 확인<span class="essential"> *</span></label>
+        <input
+          type="password"
+          placeholder="비밀번호를 다시 입력해주세요."
+          name="userPassword"
+          id="pwd2"
+          class="input"
+          required
+        />
+      </div>
+
+      <div class="inputBox emailBox">
+        <label for="email">이메일<span class="essential"> *</span></label>
+        <div class="emailContain">
+          <input
+            type="text"
+            placeholder="이메일을 입력하세요."
+            name="userEmail"
+            id="email"
+            class="input"
+            required
+          />
+          <span>@</span>
+          <input type="text" required name="domain" id="domain" />
+          <select required>
+            <option value="default" disabled selected>선택</option>
+            <option value="">직접입력</option>
+            <option value="naver.com">naver.com</option>
+            <option value="gmail.com">gmail.com</option>
+            <option value="daum.net">daum.net</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inputBox addBox">
+        <label for="add">주소<span class="essential"> *</span></label>
+        <input
+          type="text"
+          placeholder="주소를 입력하세요."
+          name="userAdd"
+          id="add"
+          class="input"
+          required
+        />
+      </div>
+
+      <div class="inputBox genderBox">
+        <p class="genderTitle">성별<span class="essential"> *</span></p>
+        <div class="genderContain">
+          <input
+            type="radio"
+            name="gender"
+            id="man"
+            value="man"
+            class="gender"
+            required
+          />
+          <label for="man">남</label>
+
+          <input
+            type="radio"
+            name="gender"
+            id="woman"
+            value="woman"
+            class="gender"
+          />
+          <label for="woman">여</label>
+        </div>
+      </div>
+
+      <div class="inputBox agreeBox">
+        <label for="check"
+          >개인정보제공 동의<span class="essential"> *</span></label
+        >
+        <input type="checkbox" id="check" name="check" value="check" required />
+      </div>
+
+      <input type="submit" id="signup" value="회원가입" />
+    </form>
+
+    <div class="modal">
+      <h3>회원가입 완료</h3>
+
+      <input type="button" value="확인" />
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
