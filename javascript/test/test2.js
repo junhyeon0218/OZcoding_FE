@@ -1,8 +1,19 @@
-// 결과를 확인하고 싶으면 터미널에 node test2.js를 입력하세요.
+function solution(s) {
+  let a = 0;
+  let b = 0;
+  var answer = true;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i].toLowerCase().includes("p") === true) {
+      a += 1;
+    } else if (s[i].toLowerCase().includes("y") === true) {
+      b += 1;
+    }
+  }
 
-// for 반복문으로 문자열의 짝수 번째 요소를 출력하는 코드를 작성하세요.
+  console.log(a, b);
 
-let str = " 이 것 은 반 복 문 을 위 한 테 스 트 입 니 다";
-for (let i = 1; i < str.length; i += 2) {
-  console.log(str[i]);
+  return a === b ? true : false;
 }
+
+console.log(solution("pPoooyY"));
+console.log(solution("Pyy"));
