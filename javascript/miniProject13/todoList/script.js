@@ -64,11 +64,6 @@ function makeList(inputValue) {
   }
 }
 
-document.getElementById("add-btn").addEventListener("click", () => {
-  const inputText = document.getElementById("todo-input").value;
-  makeList(inputText);
-});
-
 // 세션에 저장된 내용 불러오기
 function pageLoad() {
   // 객체 리스트를 배열로 변환 후 리버스 (역순으로 나오게 하기)
@@ -91,7 +86,7 @@ function pageLoad() {
     // 기존 리스트에는 1, 2, 3, 4, 5 값이 배열로 들어가 있었다.
     // 하지만 pageLoad 중에 makeList를 하면서 기존 리스트에 추가적으로 1, 2, 3, 4, 5가
     // 한번씩 더 들어갔다. 그래서 새로고침 후에 todo를 추가해주면 [추가한 todo, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
-    // 이런식으로 나왔다. -> 리스트를 valueList와 동일하게 할 필요가 있음
+    // 이런식으로 나왔다. -> makeList 안에 리스트를 valueList와 동일하게 할 필요가 있음
 
     // 리스트를 valueList로 초기화
     // makeList 상에서는 list가 바뀌지 않았으므로 콘솔에는 어지럽게 나오지만
@@ -105,8 +100,15 @@ function pageLoad() {
     // 더 편할지도..
     // 추가적으로 todo를 배열이 아닌 객체로 받았다면 완료 상태값도 같이 받을 수 있었지만, 배열로 해서 귀찮아졌다.
 
+    // 시도해볼 것
+
     // 정상 작동
   }
 }
 
 pageLoad();
+
+document.getElementById("add-btn").addEventListener("click", () => {
+  const inputText = document.getElementById("todo-input").value;
+  makeList(inputText);
+});
