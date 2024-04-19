@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="push">push</button>
+    <hr />
+    <img src="" />
+    <script>
+      const rqs = new XMLHttpRequest();
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", () => {
+        rqs.open("get", "https://dog.ceo/api/breeds/image/random");
+        rqs.addEventListener("load", () => {
+          const a = JSON.parse(rqs.response);
+          console.log(a.message);
+          const img = document.querySelector("img");
+          img.src = a.message;
+        });
+        rqs.send();
+      });
+    </script>
+  </body>
+</html>
