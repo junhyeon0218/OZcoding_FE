@@ -6,8 +6,11 @@ function read() {
   return decrypt("data");
 }
 
-// module.exports = {
-//   read,
-// };
+console.log("여긴 response 모듈");
 
-export { read };
+module.exports = {
+  read,
+  decrypt,
+};
+
+// export { read };
