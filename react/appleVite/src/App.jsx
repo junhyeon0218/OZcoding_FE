@@ -1,6 +1,6 @@
 import "./App.css";
+import Banner from "./components/Banner";
 import Nav from "./components/Nav";
-import Row from "./components/Row";
 import { styled } from "styled-components";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <Container>
         <Nav />
-        <Row />
+        <Banner />
       </Container>
     </>
   );
