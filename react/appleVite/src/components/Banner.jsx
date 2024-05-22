@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 // 임의로 지정한 axios 요청
 import axios from "../api/axios";
 import requests from "../api/requests";
+import { imageBasePath } from "../../constant";
 
 const Banner = () => {
   const [movie, setMovie] = useState(null);
@@ -45,7 +46,7 @@ const Banner = () => {
       <div
         className='banner'
         style={{
-          backgroundImage: `url("https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+          backgroundImage: `url(${imageBasePath}${movie.backdrop_path})`,
           backgroundSize: "cover",
           backgroundPosition: "top center",
         }}
