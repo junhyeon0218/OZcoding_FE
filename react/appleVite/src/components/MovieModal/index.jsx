@@ -1,11 +1,12 @@
 import { imageBasePath } from "../../../constant";
+import "../../styles/MovieModal.css";
 
 const MovieModal = ({
   backdrop_path,
   title,
   overview,
   name,
-  relea_date,
+  release_date,
   first_air_date,
   vote_average,
   setModalOpen,
@@ -23,6 +24,15 @@ const MovieModal = ({
             src={`${imageBasePath}${backdrop_path}`}
             alt=''
           />
+          <div className='modal__content'>
+            <p className='modal__details'>
+              <span>100% for you</span>{" "}
+              {release_date ? release_date : first_air_date}
+            </p>
+            <h2 className='modal__title'>{title ? title : name}</h2>
+            <p className='modal__overview'>평점: {vote_average}</p>
+            <p className='modal__overview'>{overview}</p>
+          </div>
         </div>
       </div>
     </div>
