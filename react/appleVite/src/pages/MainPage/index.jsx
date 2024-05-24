@@ -1,8 +1,8 @@
-import Banner from "../../src/components/Banner";
-import Nav from "../../src/components/Nav";
+import Banner from "../../components/Banner";
+import Nav from "../../components/Nav";
 import { styled } from "styled-components";
-import Row from "../../src/components/Row";
-import requests from "../../src/api/requests";
+import Row from "../../components/Row";
+import requests from "../../api/requests";
 
 const MainPage = () => {
   return (
