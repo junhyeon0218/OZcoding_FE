@@ -1,6 +1,4 @@
-// AddIncomeForm.js
-//수입 추가부분
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../contexts/AppContext";
 
 const AddIncomeForm = () => {
@@ -27,13 +25,13 @@ const AddIncomeForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="row">
-        <div className="col-sm col-lg-4">
+      <div className='row'>
+        <div className='col-sm col-lg-4'>
           <label>수입</label>
           <input
             required
-            type="text"
-            className="form-control"
+            type='text'
+            className='form-control'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -42,15 +40,15 @@ const AddIncomeForm = () => {
           <label>금액</label>
           <input
             required
-            type="number"
-            className="form-control"
+            type='number'
+            className='form-control'
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
-        <div className="row mt-3">
-          <div className="col-sm">
-            <button type="submit" className="btn btn-primary">
+        <div className='row mt-3'>
+          <div className='col-sm'>
+            <button type='submit' className='btn btn-primary'>
               추가
             </button>
           </div>
