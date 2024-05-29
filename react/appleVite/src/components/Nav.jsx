@@ -12,7 +12,7 @@ import {
 import app from "../firebase";
 
 const Nav = () => {
-  const [show, setShow] = useState("false");
+  const [show, setShow] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [userData, setUserData] = useState(
     localStorage.getItem("userData")
@@ -28,8 +28,8 @@ const Nav = () => {
 
   const listener = () => {
     if (window.scrollY > 50) {
-      setShow("true");
-    } else setShow("false");
+      setShow(true);
+    } else setShow(false);
   };
 
   useEffect(() => {
