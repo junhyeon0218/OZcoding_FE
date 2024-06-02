@@ -1,15 +1,35 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addTodo, deleteTodo, editTodo, toggleTodo } from "./stores/todoSlice";
 
 function App() {
   const [text, setText] = useState("");
   const [editText, setEditText] = useState("");
   const [editId, setEditId] = useState(null);
+  const [filter, setFilter] = useState("all");
+
   const todos = useSelector((state) => state.todos);
+  const [filteredTodos, setFilteredTodos] = useState(todos);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (savedTodos) {
+      setFilteredTodos(savedTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (filter === "all") {
+      setFilteredTodos(todos);
+    } else if (filter === "completed") {
+      setFilteredTodos(todos.filter((todo) => todo.completed));
+    } else if (filter === "uncompleted") {
+      setFilteredTodos(todos.filter((todo) => !todo.completed));
+    }
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos, filter]);
 
   // todo 등록
   const handleSubmit = (e) => {
@@ -47,6 +67,12 @@ function App() {
     }
   };
 
+  // 필터링 함수
+  const handleFiltered = (e) => {
+    setFilter(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
     <div className='App'>
       <form onSubmit={handleSubmit}>
@@ -58,8 +84,14 @@ function App() {
         <button type='submit'>추가</button>
       </form>
 
+      <select value={filter} onChange={handleFiltered}>
+        <option value='all'>전체보기</option>
+        <option value='completed'>완료</option>
+        <option value='uncompleted'>미완료</option>
+      </select>
+
       <ul>
-        {todos.map((todo, index) => (
+        {filteredTodos.map((todo, index) => (
           <li key={todo.id}>
             {todo.id === editId ? (
               <>
@@ -74,7 +106,7 @@ function App() {
               <>
                 <input
                   type='checkbox'
-                  checked={todo.complated}
+                  checked={todo.completed}
                   onChange={() => dispatch(toggleTodo(todo.id))}
                 />
                 <span>{todo.text}</span>
