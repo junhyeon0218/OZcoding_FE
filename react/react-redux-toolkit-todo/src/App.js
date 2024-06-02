@@ -1,7 +1,13 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { addTodo, deleteTodo, editTodo, toggleTodo } from "./stores/todoSlice";
+import {
+  addTodo,
+  deleteTodo,
+  editTodo,
+  toggleTodo,
+  loadState,
+} from "./stores/todoSlice";
 
 function App() {
   const [text, setText] = useState("");
@@ -16,9 +22,9 @@ function App() {
   useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem("todos"));
     if (savedTodos) {
-      setFilteredTodos(savedTodos);
+      dispatch(loadState(savedTodos));
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (filter === "all") {
