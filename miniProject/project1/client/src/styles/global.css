@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 1.6rem;
+    font-weight: 400;
+    background-color: rgb(40, 40, 40);
+    color: white;
+  }
+
+  /* input {
+    outline: none;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #112d4e;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  } */
+
+  :root {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    cursor: default;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    --red: #d6173a;
+  }
+}
