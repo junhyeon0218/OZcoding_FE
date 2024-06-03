@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const MovieCard = () => {
   const movies = useSelector((state) => state.movies.list);
+  const [displayedMovies, setDisplayedMovies] = useState([...movies]);
+
+  useEffect(() => {
+    setDisplayedMovies([...movies]);
+  }, [movies]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop >=
+        document.documentElement.offsetHeight - 100
+      ) {
+        setDisplayedMovies((prevMovies) => [...prevMovies, ...movies]);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [movies]);
 
   return (
     <div className='flex flex-wrap justify-center w-1280 mx-auto mt-50'>
-      {movies.map((movie) => (
+      {displayedMovies.map((movie, index) => (
         <div
-          key={movie.id}
+          key={`${movie.id}-${index}`}
           className='bg-white shadow-md rounded-4 overflow-hidden m-4 w-256 relative group'
         >
           <Link to={`/detail/${movie.id}`}>
