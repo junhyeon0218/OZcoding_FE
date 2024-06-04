@@ -1,4 +1,3 @@
-import { EMAIL_REGEXP, PASSWORD_REGEXP } from "../../lib/utils/regexp";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginPage() {

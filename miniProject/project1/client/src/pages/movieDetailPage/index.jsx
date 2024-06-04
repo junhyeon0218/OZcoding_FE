@@ -22,11 +22,11 @@ const MovieDetail = () => {
         />
       </div>
       <div className='flex flex-col w-2/3 h-full pl-4 justify-evenly'>
-        <h2 className='mb-4 text-5xl font-bold text-white'>{movie.title}</h2>
-        <p className='mb-4 text-3xl text-white'>평점: {movie.vote_average}</p>
+        <h2 className='mb-4 text-5xl font-bold text-primary'>{movie.title}</h2>
+        <p className='mb-4 text-3xl text-primary'>평점: {movie.vote_average}</p>
 
         <hr className='my-4' />
-        <p className='text-3xl text-white'>{movie.overview}</p>
+        <p className='text-3xl text-primary'>{movie.overview}</p>
       </div>
     </div>
   );
