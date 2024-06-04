@@ -1,41 +1,25 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../api/axios";
 import { useDispatch } from "react-redux";
 import { setMoviesList, setDetails } from "../../stores/moviesSlice";
 import MovieCard from "../../components/movieCard";
 import Banner from "../../components/banner";
+import requests from "../../api/requests";
 
 const MainPage = () => {
   const dispatch = useDispatch();
-  const [movies, setMovies] = useState([]);
-  const [movieDetails, setMovieDetails] = useState([]);
+
+  // axios 요청 함수
+  const fetchData = async () => {
+    // 현재 상영 중인 영화 정보를 가져오기
+    const response = await axios.get(requests.fetchNowPlaying);
+    console.log(response.data.results);
+    dispatch(setMoviesList(response.data.results));
+  };
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/api/movies")
-      .then((response) => {
-        setMovies(response.data.results);
-        dispatch(setMoviesList(response.data.results));
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, [dispatch]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/api/movie-details")
-      .then((response) => {
-        setMovieDetails(response.data);
-        dispatch(setDetails(response.data));
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, [dispatch]);
-
-  console.log(movies);
-  console.log(movieDetails);
+    fetchData();
+  }, []);
 
   return (
     <>

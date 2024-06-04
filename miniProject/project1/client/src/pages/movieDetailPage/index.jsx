@@ -13,20 +13,20 @@ const MovieDetail = () => {
   }
 
   return (
-    <div className='w-1280 mx-auto p-4 flex justify-center items-center h-full mt-100'>
+    <div className='flex items-center justify-center h-full p-4 mx-auto w-1280 mt-100'>
       <div className='w-1/3'>
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
-          className='w-full h-auto object-cover mb-4'
+          className='object-cover w-full h-auto mb-4'
         />
       </div>
-      <div className='w-2/3 pl-4 flex flex-col justify-evenly h-full'>
-        <h2 className='text-5xl font-bold mb-4 text-white'>{movie.title}</h2>
-        <p className='text-white text-3xl mb-4'>평점: {movie.vote_average}</p>
+      <div className='flex flex-col w-2/3 h-full pl-4 justify-evenly'>
+        <h2 className='mb-4 text-5xl font-bold text-white'>{movie.title}</h2>
+        <p className='mb-4 text-3xl text-white'>평점: {movie.vote_average}</p>
 
         <hr className='my-4' />
-        <p className='text-white text-3xl'>{movie.overview}</p>
+        <p className='text-3xl text-white'>{movie.overview}</p>
       </div>
     </div>
   );

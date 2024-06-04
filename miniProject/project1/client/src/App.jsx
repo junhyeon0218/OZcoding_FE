@@ -3,6 +3,8 @@ import MainPage from "./pages/mainPage";
 import MovieDetailPage from "./pages/movieDetailPage";
 import "./styles/global.css";
 import Header from "./components/header";
+import LoginPage from "./pages/loginPage";
+import SignupPage from "./pages/signupPage";
 
 const Layout = () => {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route index element={<MainPage />} />
         <Route path='detail/:id' element={<MovieDetailPage />} />
       </Route>
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='/signup' element={<SignupPage />} />
     </Routes>
   );
 }

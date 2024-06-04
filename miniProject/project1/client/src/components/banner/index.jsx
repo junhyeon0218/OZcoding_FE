@@ -13,7 +13,7 @@ const Banner = () => {
   const movies = useSelector((state) => state.movies.list);
 
   return (
-    <div className='relative w-1320 overflow-hidden mx-auto mt-100'>
+    <div className='relative mx-auto overflow-hidden w-1320 mt-100'>
       <Swiper
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -34,9 +34,9 @@ const Banner = () => {
             <SwiperSlide key={movie.id} className='h-full'>
               <div className='w-full h-full'>
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                   alt={movie.name}
-                  className='w-1/10 h-full object-cover'
+                  className='object-cover h-full w-1/10'
                 />
               </div>
             </SwiperSlide>
