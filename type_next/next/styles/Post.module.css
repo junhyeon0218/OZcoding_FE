@@ -1,0 +1,14 @@
+/* Post.module.css */
+.post {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.post h1 {
+  margin-bottom: 0.5rem;
+}
+
+.post p {
+  margin-bottom: 1rem;
+}
