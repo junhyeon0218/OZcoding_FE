@@ -1,4 +1,5 @@
 const requests = {
+  fetchPopular: "/movie/popular",
   fetchNowPlaying: "movie/now_playing",
   fetchTrending: "/trending/all/week",
   fetchTopRated: "/movie/top_rated",

@@ -3,14 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 export default function SignupPage() {
   const navigate = useNavigate();
   return (
-    <div className='flex flex-col items-center justify-center w-full h-screen'>
+    <div className='flex flex-col items-center justify-center min-h-screen gap-38'>
       <header>
-        <h1 className='text-60 mb-50' onClick={() => navigate("/")}>
+        <h1 className='text-60 ' onClick={() => navigate("/")}>
           TMDBapp
         </h1>
       </header>
       <main className='flex flex-col items-center'>
-        <form className='flex flex-col w-500'>
+        <form className='flex flex-col items-start gap-8'>
           <input
             label='이름'
             placeholder='이메일을 입력해 주세요'

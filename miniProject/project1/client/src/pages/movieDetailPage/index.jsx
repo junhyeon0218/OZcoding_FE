@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const MovieDetail = () => {
   const { id } = useParams();
   const movie = useSelector((state) =>
-    state.movies.list.find((movie) => movie.id === parseInt(id))
+    state.movies.allList.find((movie) => movie.id === parseInt(id))
   );
 
   if (!movie) {
@@ -13,7 +13,7 @@ const MovieDetail = () => {
   }
 
   return (
-    <div className='flex items-center justify-center h-full p-4 mx-auto w-1280 mt-100'>
+    <div className='flex items-center justify-center h-full p-4 mx-auto w-1280 mt-100 tablet:w-full tablet:flex-col'>
       <div className='w-1/3'>
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

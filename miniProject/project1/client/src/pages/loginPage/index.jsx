@@ -8,7 +8,7 @@ export default function LoginPage() {
         <h1 className='text-60' onClick={() => navigate("/")}>
           TMDBapp
         </h1>
-        <form className='flex flex-col items-start gap-8'>
+        <form className='flex flex-col items-start gap-8 '>
           <input
             label='이메일'
             placeholder='이메일을 입력해 주세요'

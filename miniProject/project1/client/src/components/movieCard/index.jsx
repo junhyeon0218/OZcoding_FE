@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const MovieCard = () => {
-  const movies = useSelector((state) => state.movies.list);
+  const movies = useSelector((state) => state.movies.allList);
   const [displayedMovies, setDisplayedMovies] = useState([...movies]);
 
   useEffect(() => {
@@ -25,11 +25,11 @@ const MovieCard = () => {
   }, [movies]);
 
   return (
-    <div className='flex flex-wrap justify-center mx-auto w-1280 mt-50'>
+    <div className='flex flex-wrap justify-center mx-auto w-1280 mt-50 tablet:w-full'>
       {displayedMovies.map((movie, index) => (
         <div
           key={`${movie.id}-${index}`}
-          className='relative m-4 overflow-hidden bg-white shadow-md rounded-4 w-256 group'
+          className='relative m-4 overflow-hidden bg-white shadow-md rounded-4 w-256 group mobile:w-150'
         >
           <Link to={`/detail/${movie.id}`}>
             <img
@@ -38,8 +38,10 @@ const MovieCard = () => {
               className='object-cover w-full h-full'
             />
             <div className='absolute bottom-0 left-0 right-0 p-4 transition-transform duration-300 transform translate-y-full bg-black bg-opacity-75 group-hover:translate-y-0'>
-              <h2 className='mb-2 text-2xl font-bold'>{movie.title}</h2>
-              <p className='text-xl'>{movie.vote_average}</p>
+              <h2 className='mb-2 text-2xl font-bold text-white'>
+                {movie.title}
+              </h2>
+              <p className='text-xl text-white'>{movie.vote_average}</p>
             </div>
           </Link>
         </div>
