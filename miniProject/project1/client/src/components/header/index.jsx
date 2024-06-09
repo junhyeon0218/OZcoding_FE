@@ -1,14 +1,34 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut, getAuth } from "firebase/auth";
+import { logout } from "../../stores/authSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState("");
+  const auth = getAuth();
+
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setValue(e.target.value);
     navigate(`/search?q=${e.target.value}`);
+  };
+
+  const user = useSelector((state) => state.auth.user);
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        dispatch(logout());
+        navigate("/");
+        localStorage.removeItem("user");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -30,12 +50,22 @@ const Header = () => {
           />
         </div>
 
-        <button
-          className='transition-transform duration-200 ease-in-out transform border-2 border-solid cursor-pointer h-45 w-130 border-blue-3f rounded-4 hover:scale-105 hover:bg-blue-3f hover:text-white hover:border-none mobile:text-14 mobile:w-110 mobile:h-40'
-          onClick={() => navigate("/login")}
-        >
-          <div className='pt-3'>로그인/회원가입</div>
-        </button>
+        {/* user가 null인 경우에는 로그인/회원가입 버튼, user가 존재하면 유저 정보 */}
+        {user ? (
+          <div className='flex'>
+            <div>{user.displayName || user.email} 님</div>
+            <button className='ml-20' onClick={handleLogout}>
+              로그아웃
+            </button>
+          </div>
+        ) : (
+          <button
+            className='transition-transform duration-200 ease-in-out transform border-2 border-solid cursor-pointer h-45 w-130 border-blue-3f rounded-4 hover:scale-105 hover:bg-blue-3f hover:text-white hover:border-none mobile:text-14 mobile:w-110 mobile:h-40'
+            onClick={() => navigate("/login")}
+          >
+            <div className='pt-3'>로그인/회원가입</div>
+          </button>
+        )}
       </div>
     </div>
   );

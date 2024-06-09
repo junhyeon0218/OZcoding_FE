@@ -5,7 +5,8 @@ import {
 } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // 로컬 스토리지를 사용
-import moviesReducer from "./moviesSlice"; // 예시로 moviesReducer를 사용
+import moviesReducer from "./moviesSlice";
+import authReducer from "./authSlice";
 
 const persistConfig = {
   key: "root",
@@ -14,7 +15,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   movies: moviesReducer,
-  // 다른 리듀서들도 여기에 추가
+  auth: authReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
