@@ -9,7 +9,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState("");
   const auth = getAuth();
-
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -17,7 +17,9 @@ const Header = () => {
     navigate(`/search?q=${e.target.value}`);
   };
 
-  const user = useSelector((state) => state.auth.user);
+  const handleMyPage = () => {
+    navigate("/mypage");
+  };
 
   const handleLogout = () => {
     signOut(auth)
@@ -53,7 +55,9 @@ const Header = () => {
         {/* user가 null인 경우에는 로그인/회원가입 버튼, user가 존재하면 유저 정보 */}
         {user ? (
           <div className='flex'>
-            <div>{user.displayName || user.email} 님</div>
+            <button onClick={handleMyPage}>
+              {user.displayName || user.email} 님
+            </button>
             <button className='ml-20' onClick={handleLogout}>
               로그아웃
             </button>

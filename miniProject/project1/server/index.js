@@ -1,27 +1,72 @@
 const express = require("express");
-const app = express();
-const port = 3001;
-const path = require("path");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
-// JSON 파일 경로
-const movieListDataPath = path.join(__dirname, "../data/movieListData.json");
-const movieDetailDataPath = path.join(
-  __dirname,
-  "../data/movieDetailData.json"
+const app = express();
+app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
 );
 
-const cors = require("cors");
-app.use(cors());
+let userFavorites = {};
 
-// JSON 파일을 읽어서 API로 제공
-app.get("/api/movies", (req, res) => {
-  res.sendFile(movieListDataPath);
+app.post("/api/favorites", (req, res) => {
+  const { userId, movie } = req.body;
+  console.log("POST /api/favorites", req.body);
+
+  if (!userId || !movie) {
+    return res.status(400).send("userId와 movie는 필수입니다.");
+  }
+
+  if (!userFavorites[userId]) {
+    userFavorites[userId] = [];
+  }
+
+  const movieExists = userFavorites[userId].some(
+    (favMovie) => favMovie.id === movie.id
+  );
+
+  console.log(movieExists);
+
+  if (movieExists) {
+    return res.status(400).send("이미 추가된 영화입니다.");
+  }
+
+  userFavorites[userId].push(movie);
+  res.status(200).send(userFavorites[userId]);
 });
 
-app.get("/api/movie-details", (req, res) => {
-  res.sendFile(movieDetailDataPath);
+app.get("/api/favorites/:userId", (req, res) => {
+  const { userId } = req.params;
+
+  console.log("GET /api/favorites/:userId", req.params);
+
+  if (!userId) {
+    return res.status(400).send("userId는 필수입니다.");
+  }
+
+  res.status(200).send(userFavorites[userId] || []);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.delete("/api/favorites", (req, res) => {
+  const { userId, movieId } = req.body;
+
+  if (!userId || !movieId) {
+    return res.status(400).send("userId와 movieId는 필수입니다.");
+  }
+
+  if (userFavorites[userId]) {
+    userFavorites[userId] = userFavorites[userId].filter(
+      (movie) => movie.id !== movieId
+    );
+  }
+
+  res.status(200).send(userFavorites[userId]);
+});
+
+const PORT = 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

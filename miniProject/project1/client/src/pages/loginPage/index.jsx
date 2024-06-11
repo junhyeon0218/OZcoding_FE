@@ -45,6 +45,7 @@ export default function LoginPage() {
       dispatch(login(user));
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/");
+      console.log(user);
     } catch (error) {
       setError(error.message);
     }

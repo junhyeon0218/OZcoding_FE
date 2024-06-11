@@ -13,8 +13,6 @@ const Banner = () => {
   const navigate = useNavigate();
   const movies = useSelector((state) => state.movies.trendList);
 
-  console.log(movies);
-
   return (
     <div className='relative mx-auto overflow-hidden w-1320 mt-100 tablet:w-full tablet:px-10'>
       <Swiper

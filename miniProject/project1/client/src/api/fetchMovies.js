@@ -81,7 +81,6 @@ export const fetchMovies = async (dispatch) => {
 
     // 스토어에 저장
     dispatch(setMoviesList(movies));
-    console.log(movies);
   } catch (error) {
     console.error("Failed to fetch data", error);
   }

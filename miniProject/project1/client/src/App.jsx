@@ -6,6 +6,7 @@ import Header from "./components/header";
 import LoginPage from "./pages/loginPage";
 import SignupPage from "./pages/signupPage";
 import SearchPage from "./pages/searchPage";
+import MyPage from "./pages/myPage";
 
 const Layout = () => {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route index element={<MainPage />} />
         <Route path='detail/:id' element={<MovieDetailPage />} />
         <Route path='search' element={<SearchPage />} />
+        <Route path='mypage' element={<MyPage />} />
       </Route>
       <Route path='/login' element={<LoginPage />} />
       <Route path='/signup' element={<SignupPage />} />

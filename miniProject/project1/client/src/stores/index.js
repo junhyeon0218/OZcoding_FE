@@ -4,9 +4,10 @@ import {
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // 로컬 스토리지를 사용
+import storage from "redux-persist/lib/storage";
 import moviesReducer from "./moviesSlice";
 import authReducer from "./authSlice";
+import favoritesReducer from "./favoritesSlice";
 
 const persistConfig = {
   key: "root",
@@ -16,6 +17,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   movies: moviesReducer,
   auth: authReducer,
+  favorites: favoritesReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
