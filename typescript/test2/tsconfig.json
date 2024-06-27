@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "ES6", // 컴파일시 결과를 es6에 맞게 컴파일한다.
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist", // 컴파일 결과를 dist에 저장한다.
+    "noUncheckedIndexedAccess": true // 배열에서 index접근에 조금 더 엄격한 타입을 요구한다.
+    // "lib": ["ES2022", "DOM", "DOM.Iterable", "ES2015", "ES20]
+  },
+  "include": ["src/**/*"]
+}
